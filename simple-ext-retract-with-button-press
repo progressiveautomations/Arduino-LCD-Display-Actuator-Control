@@ -1,0 +1,54 @@
+
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
+
+//pin assignment
+int relay_1 = 26;
+int relay_2 = 30;
+int lcd_key = 0;
+
+const int btnup = 100; //value of sensor when up button is pressed
+const int btndown = 255; //value of sensor when down button is pressed
+const int threshold = 5; 
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(relay_1, OUTPUT);
+  pinMode(relay_2, OUTPUT);
+  digitalWrite(relay_1, LOW);
+  digitalWrite(relay_2, LOW);
+
+  //LCD
+  lcd.begin(16, 2);
+  lcd.setCursor(0, 0); 
+  lcd_key = analogRead(A0);
+  lcd.write("Press UP to ext");
+  lcd.setCursor(0, 1);
+  lcd.write("Press DN to ret");
+  
+}
+
+void loop() {
+
+  lcd_key = analogRead(A0);
+  if (lcd_key > btnup - threshold && lcd_key < btnup + threshold) {
+  
+    digitalWrite(relay_1, HIGH);
+    digitalWrite(relay_2, LOW);
+  
+  }
+
+  else if (lcd_key > btndown - threshold && lcd_key < btndown + threshold) {
+    
+    digitalWrite(relay_1, LOW);
+    digitalWrite(relay_2, HIGH);
+
+  }
+
+  else{
+    
+  }
+
+
+}
+
