@@ -20,3 +20,5 @@ Relay NC1 - Relay NC2
 Relay NO1 - Relay NO2
 Actuator Positive - Relay COM1
 Actuator Nagative - Relay COM2
+
+-Guninder M
