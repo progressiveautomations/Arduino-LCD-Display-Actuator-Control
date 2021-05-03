@@ -1,9 +1,10 @@
 # Arduino-LCD-Display-Actuator-Control
 Required Components:
-Arduino Mega
-LCD Display with Buttons
-2 Channel Relay
-Actuator (max. 10A current draw)
+12VDC Power Supply (https://www.progressiveautomations.com/products/ps-20-12)
+Arduino Mega 
+LCD Display with Buttons (https://www.progressiveautomations.com/products/lc-207)
+2 Channel Relay (https://www.progressiveautomations.com/products/lc-200)
+Actuator (12VDC with max. 10A current draw)
 USB Cable Type A/B
 Jumper Wires
 
